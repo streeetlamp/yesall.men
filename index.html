@@ -31,10 +31,6 @@
 
               // get status
               response.status;
-              console.log(response.data.posts.items)
-
-              // set data on vm
-              // Vue.set(this.$data, 'allMen', response.data)
               this.allMen = response.data.posts.items;
 
           }, function (response) {
