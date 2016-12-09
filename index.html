@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Y E S  A L L  M E N</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-resource/dist/vue-resource.min.js"></script>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="app">
+    <h2 class="title">⛓ Y E S  A L L  M E N ⛓</h2>
+    <div v-for="man in allMen" v-bind:key="man.id"><a v-bind:href="man.full_url"><h2 v-html="man.unformatted_message"></h2></a></div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        allMen: [],
+      },
+      created () {
+        this.fetchData();
+      },
+      methods: {
+        fetchData: function() {
+          // GET request
+          this.$http.get('https://www.juicer.io/api/feeds/yesallmen').then(function (response) {
+
+              // get status
+              response.status;
+              console.log(response.data.posts.items)
+
+              // set data on vm
+              // Vue.set(this.$data, 'allMen', response.data)
+              this.allMen = response.data.posts.items;
+
+          }, function (response) {
+
+              // error callback
+          })
+        },
+      }
+    })
+  </script>
+</body>
+</html>
