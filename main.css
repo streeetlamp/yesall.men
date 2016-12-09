@@ -460,6 +460,10 @@ template {
   display: none;
 }
 
+html {
+  background: #EFEFEF;
+}
+
 #app {
   width: 100%;
   max-width: 600px;
@@ -471,6 +475,7 @@ template {
   border: 1px solid #EEE;
   padding: 15px 40px;
   color: #333;
+  background: white;
 }
 
 #app > div > a {
@@ -480,15 +485,23 @@ template {
 
 #app a {
   color: #5FABE8;
+  text-decoration: none;
 }
 
 #app > div + div {
   margin-top: -1px;
 }
 
+#app small a {
+  color: #999;
+}
+
 .title {
-  color: #F78475;
+  color: white;
+  padding: 15px;
   letter-spacing: 2px;
   display: block;
   text-align: center;
+  background: #F78475;
+  margin: 0;
 }

@@ -9,8 +9,10 @@
 <body>
 
   <div id="app">
-    <h2 class="title">⛓ Y E S  A L L  M E N ⛓</h2>
-    <div v-for="man in allMen" v-bind:key="man.id"><a v-bind:href="man.full_url"><h2 v-html="man.unformatted_message"></h2></a></div>
+    <h2 class="title">❕ Y E S  A L L  M E N ❕</h2>
+    <div v-for="man in allMen" v-bind:key="man.id"><a v-bind:href="man.full_url"><h2 v-html="man.unformatted_message"></h2></a>
+    <p><small><a v-bind:href="man.poster_url">@{{man.poster_name}}</a></small></p>
+    </div>
   </div>
 
   <script>
